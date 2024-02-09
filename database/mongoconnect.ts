@@ -5,9 +5,8 @@ dotenv.config()
 const DBname: string = process.env.DBNAME!
 const collecName: string = process.env.DBCOLLECTION!
 const url: string = process.env.DB_URL!
-let client: any = undefined
+let client: MongoClient
 
-console.log(DBname, collecName, url);
 async function GetMongoClient() {
     try{
         if(!client){
