@@ -2,10 +2,13 @@ import { Request, Response } from "express"
 import dotenv from 'dotenv'
 import express from 'express'
 import { FilterProducts } from "./database/crud"
+const cors = require('cors')
+
 const app = express()
 dotenv.config()
 
 app.use(express.json())
+app.use(cors({origin: true, credentials: true}))
 
 const port: string = process.env.PORT!
 
